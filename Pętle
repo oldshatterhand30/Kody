@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+int n;
+printf("Podaj n\n");
+scanf ("%d", &n);
+double iloczyn = 1;
+ 
+if(n%2 == 0){ 
+    for(int i=2; i<=n; i=i+2){ 
+        iloczyn = iloczyn * i;}
+    
+}
+else {
+    for(int i=1; i<=n; i=i+2){
+        iloczyn = iloczyn * i;}
+}
+printf("Wartość iloczynu wynosi %f", iloczyn);
+}
