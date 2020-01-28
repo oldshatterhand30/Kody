@@ -1,18 +1,17 @@
 #include <stdio.h>
+int main()
 
-int main(){
-	int x, y;
-	char znak;
-	
-	scanf("%d %c %d", &x, &znak, &y);
-	
-	if(znak == '+')	printf("%d\n", x + y);
-	else	if(znak == '-')	printf("%d\n", x - y);
-		else	if(znak == '*')	printf("%d\n", x * y);
-			else	if(znak == '/'){	
-					if(y != 0)	printf("%d\n", x / y);
-					else		printf("Operacja niedozwolona. y = 0. Nie mozna dzielic przez 0.\n");
-				}
-				else printf("Podano bledny znak\n");
-	return 0;
+{
+int a;
+int b;
+char z;
+int wynik;
+printf("Podaj działanie w postaci a znak b\n");
+scanf ("%d %c %d", &a, &z, &b);
+if (z == '+'){wynik = a+b;}
+if (z == '-'){wynik = a-b;}
+if (z == '*'){wynik = a*b;}
+if (z == '/' && b!=0){wynik = a/b;}
+if (z == '/' && b=0){printf("Tak nie można");}
+printf("Wynik wynosi %d", wynik);
 }
