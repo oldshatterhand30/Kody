@@ -1,0 +1,8 @@
+#include <stdio.h>
+int bit(int liczba){
+if(liczba==0)
+{return 0;}
+if(liczba!=0){
+do{liczba = liczba >> 1;
+if(liczba&1){return liczba;}}
+while(1);}}
