@@ -1,0 +1,16 @@
+void wypelnij(){
+	for(int i = 0; i < ROZMIAR; ++i)
+		for(int j = 0; j < ROZMIAR; ++j)
+			if( (i == j) || (ROZMIAR - 1 - i == j))
+				matrix[i][j] = 1;
+			else
+				matrix[i][j] = 0;
+}
+
+void wypisz(){
+	for(int i = 0; i < ROZMIAR; ++i){
+		for(int j = 0; j < ROZMIAR; ++j)
+			printf("%d", matrix[i][j]);
+	printf("\n");
+	}
+}
