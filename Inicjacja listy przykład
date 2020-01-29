@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define ZA_MALO_PAMIECI -1
+
+typedef struct wezel {
+  int wartosc;
+  struct wezel *nastepny;
+  //struct wezel *poprzedni;//w przypadku listy dwukierunkowej
+} Wezel;
+
+Wezel *glowa = NULL;
