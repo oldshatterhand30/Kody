@@ -1,0 +1,45 @@
+int remove_by_index(int index){	//zwroc wartosc elementu wskazywanego przez index i usun ten element
+	int i = 0;
+	int zwrac_wart = -1;
+	Wezel *iterator = glowa;
+
+	if(!glowa || index < 0){	//pusta lista lub zbyt maly indeks
+		return zwrac_wart;
+	}
+
+	if(index == 0){			//pierwszy element listy
+		Wezel* tmp = glowa;
+		zwrac_wart = glowa->wartosc;
+		glowa = tmp->nastepny;
+		free(tmp);
+		return zwrac_wart;
+	}
+
+	for(i; i + 1 < index; ++i)
+		if(iterator->nastepny->nastepny){
+			iterator = iterator->nastepny;
+		}
+		else
+			break;
+
+	//printf("i = %d\n", i);
+
+	if(++i == index){		//element w srodku listy
+		zwrac_wart = iterator->nastepny->wartosc;
+		Wezel* tmp = iterator->nastepny;
+		iterator->nastepny = iterator->nastepny->nastepny;
+		free(tmp);
+		return zwrac_wart;
+	}
+	else{
+		if( (!(iterator->nastepny->nastepny)) && (i == index) ){	//element na koncu
+			zwrac_wart = iterator->nastepny->wartosc;
+			free(iterator->nastepny);
+			iterator->nastepny = NULL;
+			return zwrac_wart;
+		}
+		return zwrac_wart;			//index poza lista
+	}
+
+	return zwrac_wart;
+}
