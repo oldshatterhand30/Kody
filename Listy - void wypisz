@@ -1,0 +1,13 @@
+void wypisz() {
+  Wezel *iterator = glowa;
+
+  if(iterator == NULL){
+    printf("Pusta lista\n");
+  }
+
+  while (iterator != NULL) {
+    printf("%d\n", iterator->wartosc);
+    iterator = iterator->nastepny;
+  }
+  printf("\n");
+}
