@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+typedef struct {
+	double x;
+	double y;
+	double z;
+} punkt;
+
+typedef struct {
+	punkt poczatek;
+	punkt koniec;
+} wektor;
+
+double iloczynSkalarny(wektor A, wektor B){//funkcja oblicza iloczyn skalarny 2 wektorow//
+	double wspolrzednaXA = A.koniec.x - A.poczatek.x;
+	double wspolrzednaYA = A.koniec.y - A.poczatek.y;
+	double wspolrzednaZA = A.koniec.z - A.poczatek.z;
+	double wspolrzednaXB = B.koniec.x - B.poczatek.x;
+	double wspolrzednaYB = B.koniec.y - B.poczatek.y;
+	double wspolrzednaZB = B.koniec.z - B.poczatek.z;
+	double iloczyn = wspolrzednaXA*wspolrzednaXB +wspolrzednaZB*wspolrzednaZA + wspolrzednaYA*wspolrzednaYB;
+
+	return iloczyn;
+}
+
+
+int main(){
+wektor W;
+	W.poczatek.x = 1.8;
+	W.poczatek.y = 3.4;
+	W.poczatek.z = 1.2;
+	W.koniec.x = 10.5; 
+	W.koniec.y = 7.8;
+	W.koniec.z = 2.1;
+// tu uzupelnij kod dotyczacy wypelniania struktury W//
+printf("Iloczyn skalarny wynosi %2.2f\n", iloczynSkalarny(W, W));}
