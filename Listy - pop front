@@ -1,0 +1,14 @@
+int pop_front() {//zwroc wartosc z poczatku listy i usun pierwszy element
+int zwracana_wart = -1;
+  Wezel *schowek = NULL;
+
+  if (glowa == NULL) {
+     return -1;
+  }
+
+  zwracana_wart = glowa->wartosc;
+  schowek = glowa;
+  glowa = glowa->nastepny;
+  free(schowek);
+  return zwracana_wart;
+}
