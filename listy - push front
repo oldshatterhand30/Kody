@@ -1,0 +1,17 @@
+void push_front(int liczba) {//wstaw element na poczatek listy
+   Wezel* element;
+   Wezel* iterator = NULL;
+
+  if( (element = (Wezel*)malloc(sizeof(Wezel))) == NULL ) {
+    fprintf(stderr, "Za mało pamięci!\n");
+    exit(ZA_MALO_PAMIECI);
+  }
+    element->wartosc = liczba;
+   
+    if (iterator == NULL){//pusta lista
+        glowa = element;
+        return;
+    }
+  element->nastepny = glowa;
+  glowa = element;
+}
