@@ -1,0 +1,40 @@
+
+void push_by_index( int liczba, int indx)
+{
+Wezel *iterator = glowa;
+int rozmiar()
+{
+    int licznik=0;
+    if(iterator==NULL){ return licznik;}
+    else
+    {
+            do {
+            licznik++;
+            iterator = iterator->nastepny;
+            }while (iterator!= NULL);
+    }
+    return licznik;
+}
+	if(indx==0) push_front(liczba);
+	else
+	{
+		if(indx==rozmiar()){ push_back(liczba);}
+		else
+		{
+			Wezel *tymczasowy;
+ 
+			int i=0;
+  			while (iterator->nastepny != NULL && i<indx-1) {
+            	iterator = iterator->nastepny;
+      			i++;
+    		}	
+    		
+            tymczasowy=iterator->next;
+            iterator->nastepny=(Wezel *)malloc(sizeof(Wezel));
+            iterator->nastepny->wartosc=liczba;
+            iterator->nastepny->nastepny=tymczasowy;
+        }
+	}
+		
+		
+}
