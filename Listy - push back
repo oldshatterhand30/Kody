@@ -1,0 +1,25 @@
+void push_back(int liczba) {//wstaw element na koniec listy
+
+  // konstruujemy nowy węzeł
+  Wezel* element;
+  Wezel* iterator = glowa;
+
+  if( (element = (Wezel*)malloc(sizeof(Wezel))) == NULL ) {
+    fprintf(stderr, "Za mało pamięci!\n");
+    exit(ZA_MALO_PAMIECI);
+  }
+    element->wartosc = liczba;
+    element->nastepny = NULL;
+
+    if (iterator == NULL){//pusta lista
+        glowa = element;
+        return;
+    }
+
+    while (iterator->nastepny != NULL){
+        iterator = iterator->nastepny;
+    }
+
+    iterator->nastepny = element;
+
+}
