@@ -1,25 +1,25 @@
 #include <stdio.h>
 #define PLIK "Bąbel"
 int main ()	{
-					FILE *liczby;
-					liczby = fopen(PLIK, "r");
-								if(liczby == NULL)
-																	{
-																	printf("Niemożliwe");
-																															return 0;}
+			FILE *liczby;
+			liczby = fopen(PLIK, "r");
+						if(liczby == NULL)
+										{
+										printf("Niemożliwe");
+											return 0;}
 int i = 0;
 			int tablica[100];
-												while (!feof(liczby)){fscanf(liczby, "%d", &tablica[i++]);}
+						while (!feof(liczby)){fscanf(liczby, "%d", &tablica[i++]);}
 int zmiana = 1;
 			int pam = 0;
-												while (zmiana > 0) {
-															zmiana = 0;
-																	for (int i = 0; i <= 99; i++) {
-																				if (tablica[i] > tablica[i + 1]) {
-																							pam = tablica[i];
-																										tablica[i] = tablica[i + 1];
-																																		tablica[i + 1] = pam;
-																																										zmiana++;
+						while (zmiana > 0) {
+								zmiana = 0;
+				for (int i = 0; i <= 99; i++) {
+								if (tablica[i] > tablica[i + 1]) {
+						pam = tablica[i];
+			tablica[i] = tablica[i + 1];
+							ablica[i + 1] = pam;
+												zmiana++;
 		}
 	}
 }
