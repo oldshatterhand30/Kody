@@ -18,7 +18,8 @@ int zmiana = 1;
 								if (tablica[i] > tablica[i + 1]) {
 						pam = tablica[i];
 			tablica[i] = tablica[i + 1];
-							ablica[i + 1] = pam;
+							t
+tablica[i + 1] = pam;
 												zmiana++;
 		}
 	}
