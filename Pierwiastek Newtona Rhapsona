@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+double pierwiastek (double liczba){
+
+double x=liczba/2;
+	while(fabs(x-liczba/x)>0.001){
+x=(x+liczba/x)/2;
+	if(x*x==liczba) break;
+}
+return x;}
+
+int main(){
+double liczba;
+	printf("Napisz z jakiej liczby chcesz pierwiastek\n");
+	scanf("%lf", &liczba);
+	printf("Pierwiastek wynosi %0.3f\n", pierwiastek(liczba));
+return 0;}
