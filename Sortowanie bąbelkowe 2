@@ -1,0 +1,62 @@
+#include <stdio.h>
+#define ROZMIAR 100
+
+FILE* pliczunio;
+int tab[ROZMIAR];
+
+void sort();
+void wypisz();
+void wczytaj(FILE* f);
+
+int main(){
+	pliczunio = fopen("dane1.txt", "r");	//otwarcie pliku
+	
+	if(pliczunio){				//sprawdzenie czy plik jest otwarty
+		wczytaj(pliczunio);		//wczytanie pliku
+		
+		//wypisz();			//debug
+		
+		sort();				//magia sortowania
+		
+		fclose(pliczunio);		//zamkniecie pliku
+	}
+	else{					//zwrocenie bledu, gdy plik nie jest otwarty
+		printf("Nie udalo sie otworzyc pliku\n");
+		return -1;
+	}
+	
+	wypisz();				//wypisanie tablicy
+	
+	return 0;
+}
+
+void sort(){
+	for(int j = 1; j < ROZMIAR; ++j){
+		int noswap = 1;
+		for(int i = 0; i < ROZMIAR - j; ++i){
+			if(tab[i] > tab[i+1]){		//jesli wczesniejszy element wiekszy to zamien
+				int temp = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = temp;
+				//printf("%d ", i);	//debug
+				noswap = 0;
+			}
+		}
+		if(noswap)
+			break;
+	}
+	//printf("\n\n");				//debug
+}
+
+
+void wypisz(){
+	for(int i = 0; i < ROZMIAR; ++i)
+		printf("%d ", tab[i]);
+	printf("\n");
+}
+
+
+void wczytaj(FILE* f){
+	for(int i = 0; i < ROZMIAR; ++i)
+		fscanf(f, "%d", tab + i);
+}
