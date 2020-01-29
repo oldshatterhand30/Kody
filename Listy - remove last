@@ -1,0 +1,21 @@
+int remove_last(){//zwroc wartosc z ostatniego elementu i usun ostatni element
+  Wezel *iterator = glowa;
+  int zwrac_wart = -1;
+  Wezel *schowek = NULL;
+  if (glowa == NULL) {
+     return -1;
+  }
+			if(glowa->nastepny == NULL){pop_front()}
+  while (iterator->nastepny->nastepny != NULL){ 
+ iterator = iterator->nastepny;
+    }
+  zwrac_wart=iterator->nastepny->wartosc;
+ 		schowek = iterator->nastepny;
+ 			free(schowek);
+  iterator->nastepny=NULL;
+ 	 return zwrac_wart;
+
+}
+
+
+}
